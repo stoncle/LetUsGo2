@@ -1,5 +1,6 @@
 package com.superman.letusgo.ui;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
@@ -23,20 +24,14 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.extras.SoundPullEventListener;
 import com.superman.letusgo.R;
 import com.superman.letusgo.base.BaseFragment;
+import com.superman.letusgo.list.ActiList;
+import com.superman.letusgo.model.ActiEvent;
+import com.superman.letusgo.model.Actor;
 
 public class UiActiEvent extends BaseFragment {
-	private String[] mStrings = { "Abbaye de Belloc",
-			"Abbaye du Mont des Cats", "Abertam", "Abondance",
-			"Ackawi", "Acorn", "Adelost", "Affidelice au Chablis",
-			"Afuega'l Pitu", "Airag", "Airedale", "Aisy Cendre",
-			"Allgauer Emmentaler", "Abbaye de Belloc",
-			"Abbaye du Mont des Cats", "Abertam", "Abondance",
-			"Ackawi", "Acorn", "Adelost", "Affidelice au Chablis",
-			"Afuega'l Pitu", "Airag", "Airedale", "Aisy Cendre",
-			"Allgauer Emmentaler" };
 
-	private ArrayAdapter<String> mAdapter;
-	private LinkedList<String> mListItems;
+	private ActiList mAdapter;
+	private ArrayList<ActiEvent> mListItems;
 	private PullToRefreshListView mPullRefreshListView;
 	
 	private ImageButton mBtnLaunchActi;
@@ -46,6 +41,7 @@ public class UiActiEvent extends BaseFragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_acti_event,
 				container, false);
+		ActiEvent acti = new ActiEvent(new Actor(), "title", (long)100000000, "place", "detail", 2, 1, new ArrayList<Actor>());
 		mPullRefreshListView = (PullToRefreshListView) rootView.findViewById(R.id.acti_event_ietm_listview);
 		mBtnLaunchActi = (ImageButton)rootView.findViewById(R.id.launch_acti_event_btn);
 		mBtnLaunchActi.setOnClickListener(new View.OnClickListener(){
@@ -104,11 +100,12 @@ public class UiActiEvent extends BaseFragment {
 		// Menu
 		registerForContextMenu(actualListView);
 
-		mListItems = new LinkedList<String>();
-		mListItems.addAll(Arrays.asList(mStrings));
+		mListItems = new ArrayList<ActiEvent>();
+		mListItems.add(acti);
+		mListItems.add(acti);
+		mListItems.add(acti);
 
-		mAdapter = new ArrayAdapter<String>(getActivity(),
-				android.R.layout.simple_list_item_1, mListItems);
+		mAdapter = new ActiList(this.getContext(), mListItems);
 
 		/**
 		 * Add Sound Event Listener
@@ -138,12 +135,11 @@ public class UiActiEvent extends BaseFragment {
 				Thread.sleep(4000);
 			} catch (InterruptedException e) {
 			}
-			return mStrings;
+			return new String[1];
 		}
 
 		@Override
 		protected void onPostExecute(String[] result) {
-			mListItems.addFirst("Added after refresh...");
 			mAdapter.notifyDataSetChanged();
 
 			// Call onRefreshComplete when the list has been
