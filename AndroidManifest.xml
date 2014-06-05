@@ -39,6 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.superman.letusgo.ui.UiActiEventDetail" ></activity>
     </application>
     <!-- For using network -->
     <uses-permission android:name="android.permission.INTERNET" />

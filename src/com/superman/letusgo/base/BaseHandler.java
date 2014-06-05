@@ -9,9 +9,13 @@ import com.superman.letusgo.util.AppUtil;
 public class BaseHandler extends Handler {
 	
 	protected BaseUi ui;
+	protected BaseFragment fragment;
 	
 	public BaseHandler (BaseUi ui) {
 		this.ui = ui;
+	}
+	public BaseHandler(BaseFragment fragment) {
+		this.fragment = fragment;
 	}
 	
 	public BaseHandler (Looper looper) {

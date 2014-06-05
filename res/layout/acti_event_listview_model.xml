@@ -70,20 +70,19 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/tv_host" >
 
-        <Button
+        <ImageButton
             android:id="@+id/bt_like"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
-            android:text="Button" />
+            android:background="@drawable/btn_like" />
 
-        <Button
-            android:id="@+id/bt_some"
+        <ImageButton
+            android:id="@+id/bt_more"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            android:text="Button" />
-
+            android:background="@drawable/btn_more" />
     </LinearLayout>
 
 </RelativeLayout>

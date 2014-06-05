@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.superman.letusgo.base.BaseModel;
 
 public class ActiEvent extends BaseModel{
+	public static final String COL_AID = "aid";
 	public static final String COL_HOST = "host";
 	public static final String COL_TITLE = "title";
 	public static final String COL_TIME = "time";
@@ -14,19 +15,21 @@ public class ActiEvent extends BaseModel{
 	public static final String COL_ACTUAL_PARTER = "actual_parter";
 	public static final String COL_PARTERLIST = "parterList";
 	
-	private Actor host;
+	private int aid;
+	private OtherActor host;
 	private String title;
 	private long time;
 	private String place;
 	private String detail;
 	private int required_parter;
 	private int actual_parter;
-	private ArrayList<Actor> parterList;
+	private ArrayList<OtherActor> parterList;
 	
-	public ActiEvent(Actor host, String title, long time, String place,
+	public ActiEvent(int aid, OtherActor host, String title, long time, String place,
 			String detail, int required_parter, int actual_parter,
-			ArrayList<Actor> parterList) {
+			ArrayList<OtherActor> parterList) {
 		super();
+		this.aid = aid;
 		this.host = host;
 		this.title = title;
 		this.time = time;
@@ -36,10 +39,13 @@ public class ActiEvent extends BaseModel{
 		this.actual_parter = actual_parter;
 		this.parterList = parterList;
 	}
-	public Actor getHost() {
+	public int getAid() {
+		return aid;
+	}
+	public OtherActor getHost() {
 		return host;
 	}
-	public void setHost(Actor host) {
+	public void setHost(OtherActor host) {
 		this.host = host;
 	}
 	public String getTitle() {
@@ -78,10 +84,10 @@ public class ActiEvent extends BaseModel{
 	public void setActual_parter(int actual_parter) {
 		this.actual_parter = actual_parter;
 	}
-	public ArrayList<Actor> getParterList() {
+	public ArrayList<OtherActor> getParterList() {
 		return parterList;
 	}
-	public void setParterList(ArrayList<Actor> parterList) {
+	public void setParterList(ArrayList<OtherActor> parterList) {
 		this.parterList = parterList;
 	}
 	

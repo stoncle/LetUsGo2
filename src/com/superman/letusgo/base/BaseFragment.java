@@ -28,10 +28,9 @@ public class BaseFragment extends Fragment {
 	private FragmentTransaction fragmentTransaction;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = super.onCreateView(inflater, container,
-				savedInstanceState);
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
 		fragmentManager = getFragmentManager();
 		fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -44,6 +43,14 @@ public class BaseFragment extends Fragment {
 		this.taskPool = new BaseTaskPool((BaseUi) getActivity());
 		// init application
 		this.app = (BaseApp) getActivity().getApplicationContext();
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View view = super.onCreateView(inflater, container,
+				savedInstanceState);
+		
 		return view;
 	}
 
@@ -240,6 +247,7 @@ public class BaseFragment extends Fragment {
 			}
 		}, 0);
 	}
+	
 
 	public void onTaskComplete(int taskId, BaseMessage message) {
 

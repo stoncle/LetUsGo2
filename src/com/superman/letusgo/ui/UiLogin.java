@@ -52,8 +52,8 @@ public class UiLogin extends BaseUi implements OnClickListener {
 
 		mEditAccount = (EditText) findViewById(R.id.login_edittext_account);
 		mEditPwd = (EditText) findViewById(R.id.login_edittext_password);
-		mEditAccount.setText("13260614509");
-		mEditPwd.setText("123");
+		mEditAccount.setText("13667225239");
+		mEditPwd.setText("12345");
 //		settings = getPreferences(Context.MODE_PRIVATE);
 
 	}

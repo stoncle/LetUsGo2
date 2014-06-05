@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout_acti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+            <ImageView
+                android:id="@+id/acti_event_detail_img_avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/left_icon_avatar" />
+
+            <TextView
+                android:id="@+id/acti_event_detail_tv_host"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/acti_event_detail_img_avatar"
+                android:text="Small Text"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/acti_event_detail_tv_acti_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_below="@+id/acti_event_detail_tv_host"
+                android:layout_toRightOf="@+id/acti_event_detail_img_avatar"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/acti_event_detail_tv_acti_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/acti_event_detail_tv_acti_title"
+                android:layout_below="@+id/acti_event_detail_tv_acti_title"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/acti_event_detail_tv_acti_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/acti_event_detail_tv_acti_title"
+                android:layout_toRightOf="@+id/acti_event_detail_tv_acti_time"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/acti_event_detail_tv_acti_parter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/acti_event_detail_tv_host"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/acti_event_detail_tv_acti_place"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/acti_event_detail_tv_acti_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/acti_event_detail_tv_acti_time"
+                android:layout_toRightOf="@+id/acti_event_detail_img_avatar"
+                android:text="TextView" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/acti_event_detail_tv_host" >
+
+                <Button
+                    android:id="@+id/acti_event_detail_bt_some"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/acti_event_detail_bt_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="Button" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/RelativeLayout_comment"
+            android:layout_below="@+id/RelativeLayout_acti" >
+        </ListView>
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
+
+            <EditText
+                android:id="@+id/acti_event_detail_et_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/acti_event_detail_bt_comment"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/acti_event_detail_bt_comment"
+                android:ems="10" >
+            </EditText>
+
+            <Button
+                android:id="@+id/acti_event_detail_bt_comment"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Button" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
